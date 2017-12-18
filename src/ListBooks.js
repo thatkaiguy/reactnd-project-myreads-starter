@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import BookShelf from './Bookshelf'
 
 class ListBooks extends Component {
@@ -40,6 +41,9 @@ class ListBooks extends Component {
           books={this.readBooks()}
           onBookshelfChange={this.props.onBookshelfChange}
         />
+        <div className="open-search">
+          <Link to='/search'>Search</Link>
+        </div>
       </div>
     )
   }
