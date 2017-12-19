@@ -25,7 +25,6 @@ class ListBooks extends Component {
         <div className="list-books-title">
           <h1>MyReads</h1>
         </div>
-
         <BookShelf
           title={"Currently Reading"}
           books={this.currentlyReadingBooks()}
