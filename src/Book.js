@@ -12,10 +12,11 @@ class Book extends Component {
 
   render() {
     const { id, shelf, imageLinks, title, authors, onBookshelfChange } = this.props
+    let backgroundImageUrl = imageLinks ? `url(${imageLinks.smallThumbnail || imageLinks.thumbnail})` : '#'
     return(
       <div className="book">
         <div className="book-top">
-          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${imageLinks.smallThumbnail || imageLinks.thumbnail})`}}></div>
+          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: backgroundImageUrl}}></div>
           <BookshelfChanger
             selectedOption={shelf}
             bookID={id}

@@ -32,7 +32,11 @@ class BooksApp extends React.Component {
     BooksAPI.search(query).then((response) => {
       if (response) {
         this.setState((state) => ({
-          foundBooks: response.error ? [] : response
+          foundBooks: response.error ? [] : response.map(foundBook => {
+            let shelvedBook = this.state.books.find(book => book.id === foundBook.id)
+            foundBook.shelf = shelvedBook ? shelvedBook.shelf : 'none'
+            return foundBook
+          })
         }))
       }
     })
